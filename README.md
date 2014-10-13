@@ -1,29 +1,29 @@
 [![Build Status](https://travis-ci.org/scopely-devops/killbill.svg?branch=develop)](https://travis-ci.org/scopely-devops/killbill)
 
-killbill
-========
+details
+=======
 
 Utilities to process AWS detailed billing reports.
 
 Installation
 ------------
 
-The easiest way to install ``killbill`` is by using ``pip``:
+The easiest way to install ``details`` is by using ``pip``:
 
-    $ pip install killbill
+    $ pip install details
 
 
 Backgroud
 ---------
 
-The ``killbill`` package parses the detailed billing reports produced by
+The ``details`` package parses the detailed billing reports produced by
 AWS.  You can find out more about these reports and how to enable them
 for your AWS accounts [here](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/detailed-billing-reports.html).  All testing thus far has been
 done using the **Detailed billing report with resources and tags** but the
 code should work with any detailed billing report.
 
 Once you have enabled detailed billing on your accounts, AWS will begin to
-save these CSV reports in the S3 bucket you have configured.  The ``killbill``
+save these CSV reports in the S3 bucket you have configured.  The ``details``
 library assumes you have copied the reports from S3 to your local file
 system and uncompressed them if necessary.  The [AWS CLI](https://aws.amazon.com/cli) is a good way to copy the files from S3.
 
@@ -38,10 +38,10 @@ Usage
 -----
 
 Once you have a detailed billing CSV file available locally, you can load
-the file into ``killbill`` like this:
+the file into ``details`` like this:
 
-    >>> import killbill
-    >>> total = killbill.load('../../bills/123456789012-aws-billing-detailed...')
+    >>> import details
+    >>> total = details.load('../../bills/123456789012-aws-billing-detailed...')
 
 The variable ``costs`` now points to a ``Cost`` object which contains all of
 the line item data for the entire billing file.  Note that depending on the
@@ -57,7 +57,7 @@ the total cost of the detailed billing report:
 This number should match (or very nearly match, there are some rounding
 errors at times) the total on your bill.  The other thing to note is that
 the value returned is a Python Decimal number.  The Decimal type is used
-to avoid any further rounding errors within the ``killbill`` package.
+to avoid any further rounding errors within the ``details`` package.
 You can use these Decimal numbers as you would normal ints or floats.
 Checkout [this](https://docs.python.org/2/library/decimal.html)
 for more details on the Decimal type.
