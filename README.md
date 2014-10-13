@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/scopely-devops/killbill.svg?branch=develop)](https://travis-ci.org/scopely-devops/killbill)
+
 killbill
 ========
 
