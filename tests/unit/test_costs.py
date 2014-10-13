@@ -64,6 +64,8 @@ class TestCosts(unittest.TestCase):
         self.assertEqual(total.columns, COLUMNS)
         self.assertEqual(total.values('ProductName'), SERVICES)
         self.assertEqual(total.cost, decimal.Decimal('0.08805964'))
+        self.assertEqual(total.unblended_cost, decimal.Decimal('0.08805964'))
+        self.assertEqual(total.blended_cost, decimal.Decimal('0.08805964'))
         ec2 = total.filter([('ProductName', '.*Elastic Compute.*')])
         self.assertEqual(ec2.cost, decimal.Decimal('0.08800464'))
         s3dt = total.filter([('ProductName', '.*Storage.*'),
