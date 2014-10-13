@@ -14,7 +14,7 @@ import unittest
 import os
 import decimal
 
-import killbill
+import details
 
 
 def path(filename):
@@ -60,7 +60,7 @@ class TestCosts(unittest.TestCase):
 
     def test_costs(self):
         csv_file = path('detailed_with_tags.csv')
-        total = killbill.load(csv_file)
+        total = details.load(csv_file)
         cols = total.columns
         for col in cols:
             self.assertIn(col, COLUMNS)
