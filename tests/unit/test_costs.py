@@ -61,8 +61,16 @@ class TestCosts(unittest.TestCase):
     def test_costs(self):
         csv_file = path('detailed_with_tags.csv')
         total = killbill.load(csv_file)
-        self.assertItemsEqual(total.columns, COLUMNS)
-        self.assertItemsEqual(total.values('ProductName'), SERVICES)
+        cols = total.columns
+        for col in cols:
+            self.assertIn(col, COLUMNS)
+        for col in COLUMNS:
+            self.assertIn(col, cols)
+        values = total.values('ProductName')
+        for value in values:
+            self.assertIn(value, SERVICES)
+        for value in SERVICES:
+            self.assertIn(value, values)
         self.assertEqual(total.cost, decimal.Decimal('0.08805964'))
         self.assertEqual(total.unblended_cost, decimal.Decimal('0.08805964'))
         self.assertEqual(total.blended_cost, decimal.Decimal('0.08805964'))
