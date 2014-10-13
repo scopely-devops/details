@@ -27,7 +27,7 @@ def load(file):
     """
     fp = open(file)
     reader = csv.reader(fp)
-    headers = reader.next()
+    headers = next(reader)
     costs = Costs(headers)
     for line in reader:
         data = {}
