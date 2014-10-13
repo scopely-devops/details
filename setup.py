@@ -9,15 +9,15 @@ requires = [
 
 
 setup(
-    name='killbill',
-    version=open(os.path.join('killbill', '_version')).read(),
+    name='details',
+    version=open(os.path.join('details', '_version')).read(),
     description='Tools for processing AWS detailed billing reports',
     long_description=open('README.md').read(),
     author='Mitch Garnaat',
     author_email='mitch@scopely.com',
-    url='https://github.com/scopely-devops/killbill',
+    url='https://github.com/scopely-devops/details',
     packages=find_packages(exclude=['tests*']),
-    package_dir={'killbill': 'killbill'},
+    package_dir={'details': 'details'},
     install_requires=requires,
     license=open("LICENSE").read(),
     classifiers=(

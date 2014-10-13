@@ -13,7 +13,7 @@
 import csv
 import decimal
 
-from killbill.costs import Costs
+from details.costs import Costs
 
 
 def load(file):
