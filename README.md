@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/scopely-devops/killbill.svg?branch=develop)](https://travis-ci.org/scopely-devops/killbill)
+[![Build Status](https://travis-ci.org/scopely-devops/details.svg?branch=master)](https://travis-ci.org/scopely-devops/details)
 
 details
 =======
